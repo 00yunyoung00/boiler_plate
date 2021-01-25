@@ -2,6 +2,7 @@ const { User } = require("../models/User");
 
 let auth = (req, res, next) =>{
     //인증처리 하는 곳
+    //토큰으로 유저 찾음
 
     // clinet 쿠키에서 토큰 가져옴
     let token = req.cookies.x_auth;

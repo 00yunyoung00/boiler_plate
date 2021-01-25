@@ -10,7 +10,7 @@ const userSchema = mongoose.Schema({
     },
     email:{
         type:String,
-        trim:true,
+        trim:true, //space를 없애주는 역할
         unique:1
     },
     password:{
@@ -21,19 +21,21 @@ const userSchema = mongoose.Schema({
         type:String,
         maxlength:50
     },
-    role:{
-        type:Number,
+    role:{ //관리자, 일반 user구분
+        type:Number, //1이면 관리자, 0이면 일반 유저   
         default:0
     },
     image:String,
     token:{
         type:String
     },
-    tokenExp:{
+    tokenExp:{ //토큰 유효기간
         type:Number
     }
 })
 
+//save 하기 전에 이거 한다
+//next는 save하러 돌아가는것
 userSchema.pre('save', function( next ){
 
     var user = this;

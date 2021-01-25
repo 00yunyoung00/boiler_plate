@@ -7,13 +7,14 @@ const config = require('./config/key')
 const cookieParser = require('cookie-parser')
 const { auth } = require('./middleware/auth')
 
+//application/x-www-form url-encoded
 app.use(bodyParser.urlencoded({extended:true}));
-
+//application/json
 app.use(bodyParser.json());
 
 app.use(cookieParser());
 
-
+//connect mongodb 
 const mongoose = require('mongoose')
 mongoose.connect(config.mongoURI,{
     useNewUrlParser:true, useUnifiedTopology:true, useCreateIndex:true, useFindAndModify:false
@@ -35,7 +36,7 @@ app.post('/register', (req, res)=>{
   })
 })
 
-app.post('/login', (req, res)=>{
+app.post('/api/users/login', (req, res)=>{
 
   // 요청된 이메일을 db에서 찾자
   User.findOne({ email:req.body.email }, (err, user)=>{
