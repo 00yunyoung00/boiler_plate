@@ -22,6 +22,7 @@ mongoose.connect(config.mongoURI,{
   .catch(err=>console.log(err))
 
 app.use('/api/users', require('./routes/users'));
+app.use('/api/boards', require('./routes/boards'));
 
 app.get('/api/hello', (req, res)=>res.send('Hello World!'))
 
