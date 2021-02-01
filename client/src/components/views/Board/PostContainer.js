@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import {loadPostDetail, loadPosts} from '../../../_actions/board_actions'
+import { loadPostDetail } from '../../../_actions/board_actions'
 import PostDetail from './PostDetail';
-import PostList from './PostList'
 
 function PostContainer({ match }) {
     console.log(match)
@@ -20,7 +19,7 @@ function PostContainer({ match }) {
                 alert('error')
             }
         })
-    },[dispatch])
+    },[dispatch, postId])
 
     if (!post) return <div>로딩중...</div>;
     return <PostDetail post={post.post} />;
