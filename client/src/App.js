@@ -10,6 +10,7 @@ import NavBar from "./components/views/NavBar/NavBar"
 import Footer from "./components/views/Footer/Footer"
 import PostListContainer from './components/views/Board/PostListContainer';
 import PostContainer from './components/views/Board/PostContainer'
+import Editor from './components/views/Board/Editor';
 
 //routing처리
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/login" component={Auth(LoginPage, false)}/>
           <Route exact path="/register" component={Auth(RegisterPage, false)}/>
           <Route exact path="/board" component={Auth(PostListContainer, null)}/>
+          <Route exact path="/post/new" component={Editor}/>
           <Route exact path="/post/:id" component={PostContainer}/>
         </Switch>
       </div>

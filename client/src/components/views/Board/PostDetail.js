@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '80%',
       maxWidth: 800,
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.backgroundd.paper,
       margin:"auto",
       padding:10,
       height:800,
@@ -75,7 +75,7 @@ function PostDetail({ post }) {
             </div>
             <Divider variant="middle" />
             <div className={classes.section2}>
-                {post.content}
+                {post.conmments}
             </div>
         </div>
     )
