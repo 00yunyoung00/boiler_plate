@@ -6,3 +6,4 @@ export const LOGOUT_USER = "logout_user";
 
 export const LOAD_POSTS = "load_posts"
 export const LOAD_POSTDETAIL = "load_postDetail"
+export const WRITE_POST = "write_post"
