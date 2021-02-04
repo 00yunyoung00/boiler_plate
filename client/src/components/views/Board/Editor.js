@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 
 import Divider from '@material-ui/core/Divider';
@@ -11,7 +11,7 @@ import { writeNewPost } from '../../../_actions/board_actions';
 function Editor( props ) {
 
     const dispatch = useDispatch()
-
+    const user = useSelector(state => state.user.userData)
 
     const [Title, setTitle] = useState("")
     const [Content, setContent] = useState("")
@@ -29,7 +29,8 @@ function Editor( props ) {
 
         let body={
             title:Title,
-            content:Content
+            content:Content,
+            author:user.name
         }
 
         dispatch(writeNewPost(body))

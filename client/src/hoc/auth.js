@@ -13,6 +13,7 @@ export default function (SpecificComponent, option, adminRoute=null){
     //  true일 경우 admin만 출입가능
 
     function AuthenticationCheck(props){
+        console.log("in auth")
 
         const dispatch = useDispatch()
 

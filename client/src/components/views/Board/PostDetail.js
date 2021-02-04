@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
       width: '80%',
       maxWidth: 800,
-      backgroundColor: theme.palette.backgroundd.paper,
+      backgroundColor: theme.palette.background.paper,
       margin:"auto",
       padding:10,
       height:800,
