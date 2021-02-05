@@ -67,7 +67,7 @@ function PostList({ posts }) {
                 </StyledTableCell>
                 <StyledTableCell align="right">{posts.author}</StyledTableCell>
                 <StyledTableCell align="right">{posts.date}</StyledTableCell>
-                <StyledTableCell align="right">0</StyledTableCell>
+                <StyledTableCell align="right">{posts.count}</StyledTableCell>
                 </StyledTableRow>
             ))}
             </TableBody>

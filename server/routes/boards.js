@@ -29,7 +29,8 @@ router.get('/:id', (req, res)=>{
                 getPostSuccess:false,
                 message:"no post"
             })
-        
+        post.count++
+        post.save()
         return res.status(200).json({getPostSuccess:true, post:post})
     })
 })

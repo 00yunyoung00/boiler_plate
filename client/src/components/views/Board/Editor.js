@@ -30,7 +30,8 @@ function Editor( props ) {
         let body={
             title:Title,
             content:Content,
-            author:user.name
+            author:user.name,
+            count:0
         }
 
         dispatch(writeNewPost(body))
