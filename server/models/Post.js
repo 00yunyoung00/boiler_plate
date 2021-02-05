@@ -21,6 +21,9 @@ const PostSchema = mongoose.Schema({
     author:{
         type:String
     },
+    authorId:{
+        type:String
+    },
     content:{
         type:String
     },

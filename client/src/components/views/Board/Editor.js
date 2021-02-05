@@ -9,7 +9,6 @@ import Button from '@material-ui/core/Button'
 import { writeNewPost } from '../../../_actions/board_actions';
 
 function Editor( props ) {
-
     const dispatch = useDispatch()
     const user = useSelector(state => state.user.userData)
 
@@ -31,7 +30,8 @@ function Editor( props ) {
             title:Title,
             content:Content,
             author:user.name,
-            count:0
+            count:0,
+            authorId:user._id
         }
 
         dispatch(writeNewPost(body))

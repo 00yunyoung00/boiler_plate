@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import {loadPosts} from '../../../_actions/board_actions'
 import PostList from './PostList'
 
-function PostListContainer() {
+function PostListContainer(props) {
 
     const dispatch = useDispatch()
+    console.log(props)
 
     const posts = useSelector(state => state.board.posts)
 
