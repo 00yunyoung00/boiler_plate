@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button'
 import List from '@material-ui/core/List';
 
 import Comment from './Comment'
+import CommentEditor from './CommentEditor';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -41,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
 function PostDetail({ post, user, onDeletePost }) {
 
     const classes = useStyles();
-
+    const postId = post._id
     return (
         <div className={classes.root}>
             <div className={classes.section1}>
@@ -88,7 +89,7 @@ function PostDetail({ post, user, onDeletePost }) {
                   </div> 
                   : null
               }
-              
+              <CommentEditor postId={postId}/>
           </div>
     )
 }

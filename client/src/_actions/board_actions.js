@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOAD_POSTS, LOAD_POSTDETAIL, WRITE_POST, DELETE_POST } from "./types"
+import { LOAD_POSTS, LOAD_POSTDETAIL, WRITE_POST, DELETE_POST, WRITE_COMMENT } from "./types"
 
 export function loadPosts(){
     const request = axios.get('/api/boards/')
@@ -37,6 +37,16 @@ export function deletePost(id){
     
     return{
         type:DELETE_POST,
+        payload:request
+    }
+}
+
+export function writeComment( body ){
+    const request = axios.post('/api/boards/comment/write', body)
+        .then(response=>response.data)
+
+    return{
+        type:WRITE_COMMENT,
         payload:request
     }
 }

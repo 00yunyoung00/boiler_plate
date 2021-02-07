@@ -32,6 +32,7 @@ function LoginPage(props) {
         .then(response=>{
             if(response.payload.loginSuccess){
                 localStorage.setItem("userId", response.payload.userId)
+                localStorage.setItem("userName", response.payload.userName)
                 props.history.push('/')
             }else{
                 alert('error');

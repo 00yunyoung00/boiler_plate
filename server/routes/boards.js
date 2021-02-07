@@ -58,7 +58,7 @@ router.post('/comment/write', (req, res)=>{
     let comment = new Comment()
     comment.content = req.body.content
     comment.author = req.body.author
-
+    console.log(comment)
     Post.findOneAndUpdate({_id:req.body.id},{ $push: { comments : comment } }, (err)=>{
         if(err){
             return res.json({addCommentSuccess:false, err})
