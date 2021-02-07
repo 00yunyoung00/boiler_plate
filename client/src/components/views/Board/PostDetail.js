@@ -6,6 +6,9 @@ import Grid from '@material-ui/core/Grid';
 import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button'
+import List from '@material-ui/core/List';
+
+import Comment from './Comment'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -28,6 +31,11 @@ const useStyles = makeStyles((theme) => ({
     section3: {
       margin: theme.spacing(3, 1, 1),
     },
+    comment : {
+      width: '100%',
+      maxWidth: '36ch',
+      backgroundColor: theme.palette.background.paper,
+    }
   }));
 
 function PostDetail({ post, user, onDeletePost }) {
@@ -62,21 +70,16 @@ function PostDetail({ post, user, onDeletePost }) {
             <div className={classes.section2}>
                 {post.content}
             </div>
-            <Divider variant="middle" />
+            <Divider variant="middle" />        
             <div className={classes.section2}>
-                <Typography gutterBottom variant="body1">
-                Select type
-                </Typography>
-                <div>
-                <Chip className={classes.chip} label="Extra Soft" />
-                <Chip className={classes.chip} color="primary" label="Soft" />
-                <Chip className={classes.chip} label="Medium" />
-                <Chip className={classes.chip} label="Hard" />
-                </div>
-            </div>
-            <Divider variant="middle" />
-            <div className={classes.section2}>
-                {post.conmments}
+              <Typography>Comment</Typography>
+              <List>
+                {
+                  post.comments.map((comment=>{
+                    return <Comment comment={comment} />
+                  }))
+                }
+              </List>
             </div>
               {
                 post.authorId===user ? 
@@ -85,7 +88,8 @@ function PostDetail({ post, user, onDeletePost }) {
                   </div> 
                   : null
               }
-        </div>
+              
+          </div>
     )
 }
 

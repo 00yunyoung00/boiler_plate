@@ -57,6 +57,7 @@ router.post('/comment/write', (req, res)=>{
     //댓글 입력
     let comment = new Comment()
     comment.content = req.body.content
+    comment.author = req.body.author
 
     Post.findOneAndUpdate({_id:req.body.id},{ $push: { comments : comment } }, (err)=>{
         if(err){
