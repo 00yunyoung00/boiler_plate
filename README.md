@@ -10,7 +10,7 @@ mongoDB / node.js / react
 
 1. Description
 
-회원가입, 로그인, 게시판(글 작성, 수정(아직X), 삭제, comment(아직X))이 포함된 boiler plate
+회원가입, 로그인, 게시판(글 작성, 수정(아직X), 삭제, comment)이 포함된 boiler plate
 
 
 
